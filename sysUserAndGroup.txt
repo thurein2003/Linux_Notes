@@ -1,6 +1,13 @@
 # 3 Dec 2023
 #Thu Rein Oo @CompuTech MICT part
 
+|---------------------------------|
+|                                 |
+|   To Find the words             |
+|                                 |
+|   Use => Control + F(search bar)|
+|_________________________________|
+|_________________________________|
 
 to create a user acc
 => useradd -m userName
@@ -24,3 +31,32 @@ to create a Group
 => usermod -s /sbin/nologin userName
 ' To re active the user'
 => usermod -s /bin/bash userName
+
+'To change password of the user'
+=> passwd userName
+
+|--------------------------------|
+|                                |
+|   User Account Management      |
+|                                |
+|--------------------------------|
+
+_____________________________________
+Add super User Group and sudoers file
+=> usermod -aG wheel(in centOS/fedora)/sudo(Debian) userName
+
+To pay the sudo permission to the user
+=> sudo vim /etc/sudoers
+    pay line number => set number
+        Go to the line 100 and put the userName under the root
+            ==> UserName ALL=(ALL)  ALL
+
+ To Pay the permission 
+=> chmod 777 groupName
+
+To change the own permission  
+=> chown -R root:GroupName shareDIr
+
+to look the permission list of the dir 
+=> ls -ld DirName
+
