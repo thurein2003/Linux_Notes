@@ -1,0 +1,85 @@
+
+>> hostname
+>> hostnamectl
+>> hostnamectl set-hostname "name"
+
+	Package Manager
+===============================
+>> dnf update
+>> dnf upgrade
+>> dnf install <package_name>
+>> dnf autoremove <package_name>
+
+>> dnf provides ifconfig
+>> dnf repolist (##check repository list) 
+>> dnf install	epel-release
+
+>> rpm -i <package_name.rpm>
+>> rpm -e <pkgname.rpm>
+
+
+	Time Date
+===========================
+>> timedatectl
+>> timedatectl set-ntp no
+>> timedatectl set-ntp yes
+>> timedatectl set-time 20:20:20
+>> timedatectl list-timezones
+>> timedatectl set-timezone Asia/Yangon
+
+>> date
+>> time
+>> date +%D
+>> date +%d / m / Y / y / T
+>> date +%d_%m_%Y
+
+	System Command
+==================================
+>> uname -a = Display linux system Information
+>> uname -r = Display kernel release information
+>> cat /etc/centos-release
+>> uptime   = Show How long the system has been running
+>> hostname = Show system host name
+>> hostname -i = Show the ip address of the Host
+>> last reboot = Show system reboot History
+>> date        = Show current date and time
+>> cal 	       = Show this month calendar
+>> w           = Display who is Online
+>> whoami      = Who logged in as
+ 	
+	Hardware Command
+===================================
+>> dmesg		= Detected hardware and boot messages
+>> cat /proc/cpuinfo	= CPU Model
+>> cat /proc/meminfo	= Memory Info
+>> lshw			= Hardware config of the system
+>> lsblk		= Display Block device info
+>> free -m 		= Used and free Memory
+>> lspci -tv		= Show Pci Devices
+>> lsusb -tv		= Show usb Devices
+
+
+	Basic Command
+================================
+
+>> ls = List files and Direcotry (Symbolic Link)
+>> cd = Change Directory
+>> pwd = Print working Directory 
+
+
+
+>> mkdir arldole
+>> mkdir -p ./my_dir/dir1/dir2
+>> mkdir {1..6}
+>> mkdir {a,b}
+>> rm -rf !(1)
+
+File Management Command
+======================
+touch = Create New File
+edit file (nano, vi, vim, mousepad)
+mkdir = Create New Directory
+cp 	= Copy File or Directory
+mv	= Move File or Direcotry
+rm -rf 	= Remove File or Directory
+

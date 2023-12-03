@@ -1,0 +1,26 @@
+# 3 Dec 2023
+#Thu Rein Oo @CompuTech MICT part
+
+
+to create a user acc
+=> useradd -m userName
+
+to create a Group
+=> groupadd GroupName
+
+''To check the user status''
+=> tail /etc/passwd
+
+""To add the user to the Group""
+=> usermod -aG groupName userName
+
+'To check the user whether in the gp or not'
+=> getent GroupName
+
+'To remove the user from the gp'
+=> gpasswd -d userName GroupName
+
+'Make deactivate the user'
+=> usermod -s /sbin/nologin userName
+' To re active the user'
+=> usermod -s /bin/bash userName
