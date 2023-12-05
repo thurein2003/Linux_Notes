@@ -1,0 +1,28 @@
+|-----------------------|
+|FirstDay ==> Dec.5.2023|
+|-----------------------|
+
+--------------------------------------
+Respository server
+
+official repo - Eg.Red hat | Debian 
+
+3rd party Repo - RPM fusion, RPM forge, RemiRepo (PHP)
+
+--------------------------------------
+EPEL repostory
+^^^^
+Extra Packages for Enterprise Linux
+--------------------------------------
+
+--------------------------------------
+------------|----------
+|32 bit     | 64 bit  |
+----------- |----------
+4GB support | at least 2X faster
+--------------------------------------
+64 bit only work when OS and HW are 64 bit.
+--------------------------------------
+--------------------------------------
+
+
