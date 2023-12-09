@@ -1,0 +1,43 @@
+MBR = MS-DOS partition Table (Bootable)
+GPT = GUID partition Table (Bootable)
+
+In windows
+
+When we add new hard disk 
+=> run diskmgmt.msc
+=> right click on disk
+=> select "initialize disk"
+=> select "MBR" or "GPT"
+=> click "OK"
+
+#-------------------------------------------
+
+Stenography in windows
+Hide the volume 
+________________________________
+| We can hide our drive letter |
+--------------------------------
+=> click on the volume and right click
+    => remove the drive letter
+
+=> Go to the command prompt
+    => diskpart
+     => list volume
+
+We can hide our drive letter 
+#------------------------------------------
+---------------------------
+|In Linux                  |
+|When we add new hard disk |
+---------------------------
+=> command >>lsblk
+=> command >>fdisk -l
+
+Create a partition on the Linux
+=> command >> fdisk /dev/sdb
+=> command >> n
+=> command >> p
+=> command >> w
+#------------------------------------------
+To see the mount point 
+=> df -Th 
