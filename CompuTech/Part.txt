@@ -1,0 +1,22 @@
+10 Dec 2023
+CompuTech
+
+>> parted /dev/sdb (partation path)
+>> mklabel gpt
+>> unit GB(Gigabyte)
+>> mkpart primary 0.00GB 2.00GB ( amount fo storage)
+>> pint /file system
+>> quit
+
+#--------------------------------------------------------
+> lvm (pvreate, vgcreate, lvcreate)
+> Create partation      (gdisk 2GB /dev/'hardDiskName')
+> Create Physical Volume    (pvcreate  )
+> Create Volume Group       (vgcreate)
+> Create Logical Volume     (lvcreate)
+> Create File System
+> Mount Logical Volume
+
+pvcreate /dev/sdb1   => pvscan (or) pvdisplay
+vgcreate vg_name /dev/sdb1 => vgscan (or) vgdisplay
+lvcreate -L +1G -n lv_name vg_name => lvscan (or)lvdisplay
