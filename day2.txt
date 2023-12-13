@@ -1,0 +1,8 @@
+|-----------------------|
+|SecondDay==> Dec.6.2023|
+|-----------------------|
+
+Partation
+/var/ = server log/ => for server
+/home/user/documents/ = user document
+/swap/ = we should take that storage equal or more than RAM
