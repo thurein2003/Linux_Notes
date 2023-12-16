@@ -1,0 +1,10 @@
+Install Flatpak for Centos
+
+www.flatpak.org
+
+>> sudo dnf install flatpak
+>> sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+>> flatpak search putty
+>> flatpak install flathub uk.org.greenend.chiark.sgtatham.putty (install package)
+>> flatpak install flathub uk.org.greenend.chiark.sgtatham.putty (create Shortcut)

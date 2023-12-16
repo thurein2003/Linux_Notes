@@ -1,0 +1,150 @@
+Using Find command
+==============================
+>> find / -name filename
+>> find / -iname filename
+>> find / -iname file*
+
+Create User
+====================
+useradd user1
+useradd -m username
+cat /etc/passwd ( check user)
+userdel user1
+userdel -r username
+
+usermod -u 2024 user1 (change uid)
+id username ( view uid)
+id -u username (view uid only)
+
+passwd user1 (create password & change password)
+cat /etc/shadow (view encrypted password)
+
+Create Group
+============================
+groupadd sale ( create group)
+cat /etc/group (check group)
+
+
+
+usermod -aG sale user1 ( add group member)
+getent group sale (view group member)
+
+gpasswd -d user1 sale ( remove from group)
+
+groupdel sale ( remove group)
+
+usermod -l newusername oldusername ( change login username)
+uesrmod -d /home/newusername -m newhome_dir_name ( change home dir name)
+
+usermod -s /sbin/nologlin username (create nologin user)
+usermod -s /bin/sh username (change login user)
+
+ADD Super User Group
+===========================
+>> usermod -aG wheel user2
+>> gentent group wheel
+>> gpasswd -d user2 wheel
+
+>> vim /etc/sudoers
+>> user2 ALL=(ALL) ALL
+
+>> vim /etc/sudoers.d/user
+>> user2 ALL=(ALL) ALL
+>> user2 ALL=(ALL) NOPASSWD:/usr/bin/dnf
+
+Change Owner
+=====================
+
+>> chown -R root:gp1 /Share_Dir/Finance
+>> chmod -R 770 /Share_Dir/Finacnce
+
+Create ACL
+====================
+>>setfacl -m u:boss:rx /Share_Dir/Finance
+>>getfacl /Share_dir/Finance
+
+>> setfacl -m m:--- /share_Dir/Finance
+
+>> setfacl -x u:boss /Share_Dir/Finacne (remove acl)
+
+
+Linux System Partation Command
+=================================
+
+>> fdisk (MBR,ms-dos)
+>> gdisk (GPT)
+>> part (MBR,GPT)
+>> lvm (pvcreate,vgcreate,lvcreate)
+
+>> lsblk = lists information about all or the specified block devices
+>> df -h = Show mounted file system and mount point
+>> lvmdiskscan
+
+Using fdisk
+==============
+>> fdisk /dev/sdb
+>> m (help)
+>> n (new partation)
+>> p (print partation)
+>> w (write quit)
+
+>> mkfs.xfs /dev/sdb1 (format disk)
+>> mount /dev/sdb1 /mnt
+
+Using gdisk
+==============
+>> gdisk /dev/sdb
+>> ? (help)
+>> n (new partation)
+>> p (print partation)
+>> w (write quit)
+
+Using part
+==================
+>> parted /dev/sdb
+>> mklabel gpt or msdos
+>> unit GB or TB
+>> mkpart primary 0.00GB 2.00GB
+>> print
+>> quit
+
+Using LVM
+===============
+
+>> Add HDD
+>> Create partation
+>> Create Physical volume
+>> Create volume Group
+>> Create logical volume
+>> Format
+>> mount
+
+Add 3 HDD
+Gdisk /dev/sdc
+8e00
+Lvmdiskscan
+Pvscan
+Pvdisplay
+vgscan
+
+Pvcreate /dev/sdb1 /dev/sdf1
+Pvscan
+Vgcreate Adstore /dev/sdb1 /dev/sdc1
+Vgscan
+Lvcreate –L 10G –n ADhdd01 Adstore
+lvscan
+
+Lsblk
+Mkfs.xfs /dev/Adstore/ADhdd01
+Mount /dev/Adstore/ADhdd01 /dir
+
+Extend Partation
+====================
+Df –h
+Gdisk /dev/sdd
+Pvcreate /dev/sdd1
+Vgextend Centos /dev/sdd1
+Lvextend –L+2G /dev/Centos/root
+Xfs_growfs /dev/Centos/root (mount point)
+
+
